@@ -1,0 +1,38 @@
+
+<mat-tab-group *ngIf="flag">
+
+  <mat-tab [label]="data.title" *ngFor="let data of recipesData" >
+
+    <mat-card class="example-card">
+      <div >
+        <mat-card-title-group>
+          <mat-card-title> {{ data.title }}</mat-card-title>
+          <mat-card-subtitle>{{ data.subTitle}}</mat-card-subtitle>
+
+        </mat-card-title-group>
+        <mat-card-content>
+        <div >
+        <img class="img1" mat-card-sm-image src="/assets/meal.jpg" >
+         <p>{{data.content}}</p>
+        </div>
+
+        </mat-card-content>
+
+
+      </div>
+
+
+
+    </mat-card>
+
+</mat-tab>
+
+</mat-tab-group>
+<mat-tab-group dynamicHeight></mat-tab-group>
+<div *ngIf="!flag" class="empty">
+  <h1>Hey you have no current recipies in your cook book,</h1>
+
+  <h2>Click the button below to add your own meals :)
+  </h2>
+  <a href="edit"><button mat-raised-button >Add Recipe</button></a>
+  </div>

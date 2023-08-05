@@ -1,0 +1,69 @@
+<mat-tab-group>
+  <div>
+    <mat-tab [label]="recipe.title" *ngFor="let recipe of recipesData; let i=index">
+      <!--editable is false, so 1st block is normal version, next mat-card block is the editable version -->
+      <mat-card *ngIf="!editable" class="example-card">
+        <div>
+          <mat-card-title-group>
+            <mat-card-title> {{ recipe.title }}</mat-card-title>
+            <button mat-fab color="primary" class="edit-top" (click)="edit(i)"> <mat-icon>edit</mat-icon></button>
+            <mat-card-subtitle>{{ recipe.subTitle}}</mat-card-subtitle>
+          </mat-card-title-group>
+          <mat-card-title-group>
+            <div *ngIf="recipe.content">
+              <img class="img1" mat-card-sm-image [src]="recipe.image">
+              <p>{{recipe.content}}</p>
+            </div>
+          </mat-card-title-group>
+        </div>
+      </mat-card>
+
+      <mat-card *ngIf="editable" class="example-card">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput name="Title" [(ngModel)]="recipe.title" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Subtitle</mat-label>
+            <input matInput name="subTitle" [(ngModel)]="recipe.subTitle" >
+          </mat-form-field>
+          <div>
+            <img class="img1" mat-card-sm-image [src]="recipe.image">
+          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Content</mat-label>
+            <textarea matInput name="content" [(ngModel)]="recipe.content" ></textarea>
+          </mat-form-field>
+          <div class="edit"><button mat-fab color="primary" (click)="save(i)"> <mat-icon>save_alt</mat-icon></button>
+          </div>
+        </form>
+      </mat-card>
+    </mat-tab>
+  </div>
+
+
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  (
+
+      <a routerLink="/edit/{{i}}" class="edit"><mat-icon>edit</mat-icon></a>
+
+
+   ((
+        title: ‘Hot Meals’,
+     subTitle: ‘I am a camel’,
+     imagePath: ‘./assets/image1.jpg’,
+     content: ‘Step 1: Clean the tomatoes’
+     )),
+    ((
+        title: ‘Hot Meal Nr 2’,
+     subTitle: ‘I am a camel 2’,
+     imagePath: ‘./assets/image2.jpg’,
+     content: ‘Step 1: Clean the tomatoes’
+     ))
+
+   )
+   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+</mat-tab-group>
+
+<mat-tab-group dynamicHeight></mat-tab-group>
