@@ -62,3 +62,5 @@ font-style: normal;
 margin-left: 75px;
 font-family: cursive;
 }
+
+.link-muted { color: #aaa; } .link-muted:hover { color: #1266f1; }

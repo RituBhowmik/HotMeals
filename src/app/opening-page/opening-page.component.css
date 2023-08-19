@@ -309,9 +309,6 @@ border-radius: 10%;
 .edit{
 margin-left: 45%;
 }
-.example-full-width {
-  width: 100%;
-}
-.edit-top{
-  align-self: end;
+.empty{
+  margin:2% 10% 0 10% ;
 }
