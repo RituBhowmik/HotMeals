@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { DatePipe } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,21 +13,23 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { EditComponent } from './edit/edit.component';
+
 import {MatMenu, MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { OwnRecipiesComponent } from './own-recipies/own-recipies.component';
 import { GeneratedMealComponent } from './generated-meal/generated-meal.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpeningPageComponent,
-    EditComponent,
+
     OwnRecipiesComponent,
-    GeneratedMealComponent
+    GeneratedMealComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatSnackBarModule
   ],
-  providers: [],
+
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

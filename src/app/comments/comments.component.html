@@ -1,0 +1,42 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+
+  <section style="background-color: #bcbec2;">
+    <div class="container my-5 py-5 text-dark">
+      <button *ngIf="!showForm" style="margin: 5px;" mat-raised-button color="primary" (click)=addComment()> <mat-icon>library_add</mat-icon>Add comment</button>
+      <div *ngIf="showForm" >
+       
+          <mat-form-field class="example-full-width">
+            <mat-label>Your name</mat-label>
+            <input matInput placeholder="Eg. John Doe" [(ngModel)]="comment.User">
+          </mat-form-field>
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="comment.comment"></textarea>
+          </mat-form-field>
+          <button  style="margin: 5px;" mat-raised-button color="primary" (click)=save()> Save</button>
+  
+  
+      </div>
+      <div *ngFor="let comment of allComments">
+        <div class="row justify-content-center">
+          <div>
+            <div class="d-flex flex-start mb-4">
+              <div class="card w-100">
+                <div class="card-body p-4">
+                  <div class="">
+                    <h2 class="card-title">{{comment.User}}</h2>
+                    <h4>{{comment.date}}</h4>
+                    <h3> {{comment.comment}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
