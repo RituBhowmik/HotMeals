@@ -1,5 +1,5 @@
 
-  
+       <div *ngIf="!saveFlag">  
         <mat-card  class="my-card">
         
             <mat-form-field class="example-full-width">
@@ -19,7 +19,13 @@
             </div>
          
         </mat-card>
-
-  
+      </div>
+      <div *ngIf="saveFlag">  
+        <mat-card class="my-card">
+            <h1 style="color: brown;">Thats yummie!</h1>
+          <h1>Your new recipe has been successfully added!</h1>
+          <button mat-raised-button (click)="another()" >Add another recipe</button>
+        </mat-card>
+      </div>
   
    

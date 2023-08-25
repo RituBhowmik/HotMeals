@@ -14,21 +14,29 @@ export type Recipe = {
 export class AddRecipeComponent implements OnInit
 {   constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar){}
 public data:Recipe = { title: '', subTitle: '',  content: '' };
+public saveFlag:boolean= false;
 ngOnInit(): void {
   
   }
 save(){
+
   this.httpClient
   .post(
     `http://localhost:3000/writeOwnMeals`,
     this.data
   )
   .subscribe(() => {
+    this.saveFlag=true;
     this._snackBar.open('Your changes are saved!', '', {
       duration: 2 * 1000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
+      
     });
   });
+}
+another(){
+  this.saveFlag=false;
+  this.data = { title: '', subTitle: '',  content: '' };
 }
 }
