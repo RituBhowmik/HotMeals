@@ -18,9 +18,9 @@ import {MatMenu, MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { OwnRecipiesComponent } from './own-recipies/own-recipies.component';
-import { GeneratedMealComponent } from './generated-meal/generated-meal.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CommentsComponent } from './comments/comments.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,9 @@ import { CommentsComponent } from './comments/comments.component';
     OpeningPageComponent,
 
     OwnRecipiesComponent,
-    GeneratedMealComponent,
-    CommentsComponent
+
+    CommentsComponent,
+     AddRecipeComponent
   ],
   imports: [
     BrowserModule,

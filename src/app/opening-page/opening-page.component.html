@@ -2,7 +2,7 @@
   <div>
     <mat-tab [label]="recipe.title" *ngFor="let recipe of recipesData; let i=index">
       <!--editable is false, so 1st block is normal version, next mat-card block is the editable version -->
-      <mat-card *ngIf="!editable" class="example-card">
+      <mat-card *ngIf="!editable" class="my-card">
         <div>
           <mat-card-title-group>
             <mat-card-title> {{ recipe.title }}</mat-card-title>
@@ -18,8 +18,8 @@
         </div>
       </mat-card>
 
-      <mat-card *ngIf="editable" class="example-card">
-        <form class="example-form">
+      <mat-card *ngIf="editable" class="my-card">
+      
           <mat-form-field class="example-full-width">
             <mat-label>Title</mat-label>
             <input matInput name="Title" [(ngModel)]="recipe.title" >
@@ -37,7 +37,7 @@
           </mat-form-field>
           <div class="edit"><button mat-fab color="primary" (click)="save(i)"> <mat-icon>save_alt</mat-icon></button>
           </div>
-        </form>
+       
       </mat-card>
     </mat-tab>
   </div>

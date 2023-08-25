@@ -1,0 +1,25 @@
+
+  
+        <mat-card  class="my-card">
+        
+            <mat-form-field class="example-full-width">
+              <mat-label>Title</mat-label>
+              <input matInput name="Title" [(ngModel)]="data.title" >
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Subtitle</mat-label>
+              <input matInput name="subTitle" [(ngModel)]="data.subTitle" >
+            </mat-form-field>
+       
+            <mat-form-field class="example-full-width">
+              <mat-label>Content</mat-label>
+              <textarea matInput name="content" [(ngModel)]="data.content" ></textarea>
+            </mat-form-field>
+            <div class="edit"><button mat-fab color="primary" (click)="save()"> <mat-icon>save_alt</mat-icon></button>
+            </div>
+         
+        </mat-card>
+
+  
+  
+   
