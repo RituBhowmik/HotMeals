@@ -1,0 +1,29 @@
+<div class="button">
+    <button mat-raised-button (click)="newMeal()" *ngIf="switch">Generate your meal combination</button>
+    <button mat-raised-button (click)="back()" *ngIf="!switch"><mat-icon>autorenew</mat-icon></button>
+</div>
+   
+
+<div class="tp-wrapper">
+	<div class="tp-box"  [@flipState]="flip">
+		<div class="tp-box__side tp-box__front"> <img class="img" src="https://eatwheat.org/wp-content/uploads/2018/04/carbohydrates-complex-carbs.png"></div>
+		<div class="tp-box__side tp-box__back"> {{requestData.carbs}}
+		</div>
+	</div>
+</div>
+<div class="tp-wrapper">
+	<div class="tp-box" [@flipState]="flip">
+		<div class="tp-box__side tp-box__front"><img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX6ubWIpY-l03ODh1bcPK_OIo9DUgfvqawNA&usqp=CAU" >
+		</div>
+		<div class="tp-box__side tp-box__back">{{requestData.proteins}}
+		</div>
+	</div>
+</div>
+<div class="tp-wrapper">
+	<div class="tp-box" [@flipState]="flip">
+		<div class="tp-box__side tp-box__front"><img class="img" src=" https://previews.123rf.com/images/baibakova/baibakova1710/baibakova171000120/88608960-selection-of-healthy-fat-sources-on-wooden-background-top-view.jpg" >
+        </div>
+		<div class="tp-box__side tp-box__back">{{requestData.fats}}
+		</div>
+	</div>
+</div>

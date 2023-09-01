@@ -21,6 +21,7 @@ import { OwnRecipiesComponent } from './own-recipies/own-recipies.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CommentsComponent } from './comments/comments.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { GenratedMealsComponent } from './genrated-meals/genrated-meals.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     OwnRecipiesComponent,
 
     CommentsComponent,
-     AddRecipeComponent
+     AddRecipeComponent,
+     GenratedMealsComponent
   ],
   imports: [
     BrowserModule,
