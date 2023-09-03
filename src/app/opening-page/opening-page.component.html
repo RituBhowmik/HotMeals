@@ -12,7 +12,7 @@
           <mat-card-title-group>
             <div *ngIf="recipe.content">
               <img class="img1" mat-card-sm-image [src]="recipe.image">
-              <p>{{recipe.content}}</p>
+              <h3>{{recipe.content}}</h3>
             </div>
           </mat-card-title-group>
         </div>
@@ -33,7 +33,7 @@
           </div>
           <mat-form-field class="example-full-width">
             <mat-label>Content</mat-label>
-            <textarea matInput name="content" [(ngModel)]="recipe.content" ></textarea>
+            <textarea matInput name="content"  [(ngModel)]="recipe.content" ></textarea>
           </mat-form-field>
           <div class="edit"><button mat-fab color="primary" (click)="save(i)"> <mat-icon>save_alt</mat-icon></button>
           </div>
@@ -41,28 +41,6 @@
       </mat-card>
     </mat-tab>
   </div>
-
-
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  (
-
-      <a routerLink="/edit/{{i}}" class="edit"><mat-icon>edit</mat-icon></a>
-
-
-   ((
-        title: ‘Hot Meals’,
-     subTitle: ‘I am a camel’,
-     imagePath: ‘./assets/image1.jpg’,
-     content: ‘Step 1: Clean the tomatoes’
-     )),
-    ((
-        title: ‘Hot Meal Nr 2’,
-     subTitle: ‘I am a camel 2’,
-     imagePath: ‘./assets/image2.jpg’,
-     content: ‘Step 1: Clean the tomatoes’
-     ))
-
-   )
-   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 </mat-tab-group>
 
