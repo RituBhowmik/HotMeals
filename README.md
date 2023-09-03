@@ -1,14 +1,16 @@
 # HotMeals
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+This project works in conjugation with the backend-NodeProject which serves the APIs and has connected sqlite databases. 
+
+To initialize the project:
+- First run the backend-NodeProject with command 'node index.js' which serves the backend using localhost:3000.
+- Use npm i in HotMeals project to import required files
+- Use npm run start to serve
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
