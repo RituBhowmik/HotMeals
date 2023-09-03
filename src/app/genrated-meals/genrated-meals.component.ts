@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import {generatedRecipe} from 'src/recipeType';
 @Component({
   selector: 'app-genrated-meals',
   templateUrl: './genrated-meals.component.html',
@@ -20,8 +20,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class GenratedMealsComponent implements OnInit {
-  constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar) {}
-  requestData: any;
+  constructor(private httpClient: HttpClient) {}
+  public requestData: generatedRecipe= {carbs:'', proteins:'', fats: ''};
   switch:boolean=true;
   ngOnInit(): void {
     
@@ -34,7 +34,7 @@ export class GenratedMealsComponent implements OnInit {
   }
   generate(){
     this.httpClient.get('http://localhost:3000/GeneratedRecipe').subscribe((data) => {
-this.requestData=data; 
+    this.requestData= JSON.parse(JSON.stringify(data));
     });
   }
   back(){

@@ -5,12 +5,8 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-export type Recipe = {
-  title: string;
-  subTitle: string;
-  image: string;
-  content: string;
-};
+import { Recipe } from 'src/recipeType';
+
 @Component({
   selector: 'app-opening-page',
   templateUrl: './opening-page.component.html',

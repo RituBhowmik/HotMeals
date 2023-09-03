@@ -1,12 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-export type comment = {
-  User: string;
-  comment: string;
-  date: string;
-};
-
+import {comment}  from 'src/recipeType';
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',

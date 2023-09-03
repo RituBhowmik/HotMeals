@@ -1,11 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-export type Recipe = {
-  title: string;
-  subTitle: string;
-  content: string;
-};
+import {Recipe1} from 'src/recipeType';
+
 @Component({
   selector: 'app-add-recipe',
   templateUrl: './add-recipe.component.html',
@@ -13,7 +10,7 @@ export type Recipe = {
 })
 export class AddRecipeComponent implements OnInit
 {   constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar){}
-public data:Recipe = { title: '', subTitle: '',  content: '' };
+public data:Recipe1 = { title: '', subTitle: '',  content: '' };
 public saveFlag:boolean= false;
 ngOnInit(): void {
   
